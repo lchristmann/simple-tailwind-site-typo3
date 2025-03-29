@@ -1,0 +1,22 @@
+{
+    "name": "lchristmann/t3_tailwind",
+    "type": "typo3-cms-extension",
+    "description": "Minimal TYPO3 site package with Tailwind CSS",
+    "keywords": ["TYPO3 CMS"],
+    "version": "1.0.0",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Leander Christmann",
+            "email": "hello@lchristmann.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "t3_tailwind"
+        }
+    }
+}

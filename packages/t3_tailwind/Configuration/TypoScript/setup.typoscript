@@ -1,0 +1,26 @@
+page = PAGE
+page.shortcutIcon = EXT:t3_tailwind/Resources/Public/Icons/tailwind.svg
+page.meta.viewport = width=device-width, initial-scale=1.0
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    templateName = Default
+    templateRootPaths.1 = EXT:t3_tailwind/Resources/Private/Templates
+    layoutRootPaths.1 = EXT:t3_tailwind/Resources/Private/Layouts
+    partialRootPath = EXT:t3_tailwind/Resources/Private/Partials
+}
+
+# Only on the home page use the Home.html Fluid template
+[globalVar = TSFE:id = 1]
+    page.10.templateName = Home
+[global]
+
+# Load Tailwind via CDN
+page.includeJSLibs {
+    tailwind = https://cdn.tailwindcss.com
+    tailwind.external = 1
+}
+
+page.includeJSFooter {
+    mobile-menu = EXT:t3_tailwind/Resources/Public/JavaScript/mobileMenu.js
+}

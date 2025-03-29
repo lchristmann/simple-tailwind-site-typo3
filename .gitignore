@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+nbproject
+/vendor
+/public/*
+!/public/typo3conf
+/public/typo3conf/*
+!/public/typo3conf/LocalConfiguration.php
+
+# Exclude typo3temp (cache, processed files)
+/public/typo3temp/
