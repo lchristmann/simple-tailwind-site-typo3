@@ -26,7 +26,7 @@ From now on, you can start and stop this project with `ddev start` and `ddev sto
 
 ## Development
 
-For easier development I added the DDEV Add-On "PhpMyAdmin", which you can run with `ddev phpmyadmin` and easily inspect the contents of the `db` database.
+For easier development I added the DDEV Add-On "PhpMyAdmin" (with `ddev add-on get ddev/ddev-phpmyadmin`), which you can install and run with `ddev phpmyadmin` and easily inspect the contents of the `db` database.
 
 ## How I created and installed the site package
 
