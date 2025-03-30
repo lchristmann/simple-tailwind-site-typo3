@@ -30,6 +30,7 @@ return [
         'debug' => false,
         'enableRecordRegistration' => false,
         'loginSecurityLevel' => 'normal',
+        'pageNotFound_handling' => 'REDIRECT:/index.php?id=6',
     ],
     'GFX' => [
         'jpg_quality' => '80',

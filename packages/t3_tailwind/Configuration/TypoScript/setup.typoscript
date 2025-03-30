@@ -1,18 +1,29 @@
 page = PAGE
 page.shortcutIcon = EXT:t3_tailwind/Resources/Public/Icons/tailwind.svg
-page.meta.viewport = width=device-width, initial-scale=1.0
+page.meta {
+    viewport = width=device-width, initial-scale=1.0
+    # Exclude 404 page from being indexed by search engines: https://jweiland.net/typo3-cms/codebeispiele/typoscript/seiten-von-suchmaschinensuche-ausschliessen.html
+    robots = INDEX,FOLLOW
+    robots.override = NOINDEX,NOFOLLOW
+    robots.override.if.isTrue.field = no_search
+}
 
 page.10 = FLUIDTEMPLATE
 page.10 {
     templateName = Default
     templateRootPaths.1 = EXT:t3_tailwind/Resources/Private/Templates
     layoutRootPaths.1 = EXT:t3_tailwind/Resources/Private/Layouts
-    partialRootPath = EXT:t3_tailwind/Resources/Private/Partials
+    partialRootPaths.1 = EXT:t3_tailwind/Resources/Private/Partials
 }
 
-# Only on the home page use the Home.html Fluid template
+# On the home page use the Home.html Fluid template
 [globalVar = TSFE:id = 1]
     page.10.templateName = Home
+[global]
+
+# On the 404 page use the 404.html Fluid template
+[globalVar = TSFE:id = 6]
+    page.10.templateName = 404
 [global]
 
 # Load Tailwind via CDN

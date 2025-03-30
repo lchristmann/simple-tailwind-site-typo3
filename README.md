@@ -13,21 +13,16 @@ If you choose to copy just this single `t3_tailwind` package to your site, remem
 ## Get this quickly up and running
 
 1. First `git clone` or download it.
-2. Install dependencies with ddev and start the project.
+2. Install dependencies with ddev, import the database content, and start the project.
     ```shell
     ddev composer install 
     ddev start
     ddev import-db --file=db.sql.gz
     ```
-3. Open the site in the browser, if prompted to create a FIRST_INSTALL file, run this.
-    ```shell
-    ddev exec touch public/FIRST_INSTALL
-    ```
-   Then click `I know what I'm doing, continue!` and set up an admin.
-4. Create the pages `Home` (make it root) and below it `About`, `Blog`, `Docs`, `Changelog`. 
-5. Create a root TypoScript Template record for the `Home` page (in the Web > Template module), go to the `Includes` Tab and include the `t3_tailwind` static TypoScript from the site package extension.  
 
 From now on, you can start and stop this project with `ddev start` and `ddev stop`.
+
+The credentials for the backend admin user are `admin` and `Administrat0r!` (with a zero) as password. 
 
 ## Development
 
@@ -112,8 +107,11 @@ The top-level files:
 - `ext_tables.php`: add the site package's TypoScript as static config file, so it can be included by selecting the website's root TypoScript template > visit "Includes" Tab > select the title of your site package
   - note that `extKey` here (the first parameter of the `addStaticFile()` method), _must be exactly the same_ as the `typo3/cms/extension-key` in the `composer.json` file for the site package to work!!
 
-The folders / files inside those:
+The two folders:
 
-- `Configuration/TypoScript/setup.typoscript`: the TypoScript file, that gets included in the website's root template record and configures the rendering for the entire website 
-- `Resources/Private`: Fluid stuff for rendering ~ [Templates, Layouts and Partials](https://docs.typo3.org/m/typo3/tutorial-sitepackage/8.7/en-us/FluidTemplates/Index.html#folders-under-private)
-- `Resources/Public`: public resources that shall be served to the browser as-is. Many site packages have a folder `Css` there, too.
+- `Configuration`:
+  - `TypoScript`:
+    - `setup.typoscript`: the TypoScript file, that gets included in the website's root template record and configures the rendering for the entire website 
+- `Resources`:
+  - `Private`: Fluid stuff that will be used by Typo3 for rendering ~ [Templates, Layouts and Partials](https://docs.typo3.org/m/typo3/tutorial-sitepackage/8.7/en-us/FluidTemplates/Index.html#folders-under-private)
+  - `Public`: public resources to be served to the browser as-is. Many site packages have a folder `Css` there, too.
