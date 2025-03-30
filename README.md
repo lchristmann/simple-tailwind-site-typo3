@@ -2,6 +2,10 @@
 
 This is a **simple TYPO3 8.7 website** using a **site package** based on Tailwind CSS.
 
+All work of mine is inside the `packages/t3_tailwind` folder - the rest is just a standard installation (see [How I created this TYPO3 site](#how-i-created-this-typo3-site).
+
+If you choose to copy just this single `t3_tailwind` package to your site, remember to install it via `ddev composer require lchristmann/t3_tailwind`.
+
 ## Prerequisites
 
 - [DDEV](https://ddev.com/)
@@ -12,6 +16,7 @@ This is a **simple TYPO3 8.7 website** using a **site package** based on Tailwin
 2. Install dependencies with ddev and start the project.
     ```shell
     ddev composer install
+    ddev import-db --file=db.sql.gz 
     ddev start
     ```
 3. Open the site in the browser, if prompted to create a FIRST_INSTALL file, run this.
@@ -54,3 +59,10 @@ Then I manually created the folder structure and files necessary for the site pa
 ## Documentation on how a site package works
 
 \<TBD>
+
+## Side notes
+
+How to import and export the database with DDEV:
+
+- `ddev export-db --file=db.sql.gz`
+- `ddev import-db --file=db.sql.gz`

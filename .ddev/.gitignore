@@ -30,6 +30,3 @@
 /traefik/certs/simple-tailwind-site-typo3.key
 /xhprof/xhprof_prepend.php
 /**/README.*
-/docker-compose.phpmyadmin.yaml
-/docker-compose.phpmyadmin_norouter.yaml
-/commands/host/phpmyadmin
