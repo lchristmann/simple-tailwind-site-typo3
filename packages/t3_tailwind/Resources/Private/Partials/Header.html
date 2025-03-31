@@ -6,7 +6,7 @@
         </a>
     </div>
     <div class="flex lg:hidden">
-        <!-- Button to open mobile menu -->
+        <f:comment><!-- Button to open mobile menu --></f:comment>
         <button type="button" id="openMenuButton"
                 class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 cursor-pointer">
             <span class="sr-only">Open main menu</span>
@@ -16,19 +16,18 @@
         </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-        <a href="/index.php?id=2" class="text-sm/6 font-semibold text-gray-900">About</a>
-        <a href="/index.php?id=3" class="text-sm/6 font-semibold text-gray-900">Blog</a>
-        <a href="/index.php?id=4" class="text-sm/6 font-semibold text-gray-900">Docs</a>
-        <a href="/index.php?id=5" class="text-sm/6 font-semibold text-gray-900">Changelog</a>
+        <f:for as="menuItem" each="{menu}">
+            <a href="{menuItem.link}" target="{menuItem.target}" title="{menuItem.title}" class="text-sm/6 font-semibold text-gray-900">{menuItem.title}</a>
+        </f:for>
     </div>
     <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="/index.php?id=4" class="text-sm/6 font-semibold text-gray-900">Try it out <span aria-hidden="true">&rarr;</span></a>
     </div>
 </nav>
 
-<!-- Mobile menu, show/hide based on menu open state. -->
+<f:comment><!-- Mobile menu, show/hide based on menu open state. --></f:comment>
 <div id="mobileMenu" class="lg:hidden" role="dialog" aria-modal="true" style="display: none;">
-    <!-- Background backdrop -->
+    <f:comment><!-- Background backdrop --></f:comment>
     <div class="fixed inset-0"></div>
     <div class="fixed inset-y-0 right-0 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
@@ -50,10 +49,9 @@
         <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
-                    <a href="/index.php?id=2" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
-                    <a href="/index.php?id=3" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Blog</a>
-                    <a href="/index.php?id=4" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Docs</a>
-                    <a href="/index.php?id=5" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Changelog</a>
+                    <f:for as="menuItem" each="{menu}">
+                        <a href="{menuItem.link}" target="{menuItem.target}" title="{menuItem.title}" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">{menuItem.title}</a>
+                    </f:for>
                 </div>
                 <div class="py-6">
                     <a href="/index.php?id=4" class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Try it out</a>

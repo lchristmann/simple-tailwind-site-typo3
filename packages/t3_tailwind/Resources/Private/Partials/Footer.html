@@ -1,10 +1,9 @@
 <footer class="sticky top-[100vh]">
     <div class="mx-auto max-w-7xl overflow-hidden px-6 py-6 sm:py-10 lg:px-8">
         <nav class="-mb-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm/6" aria-label="Footer">
-            <a href="/index.php?id=2" class="text-gray-600 hover:text-gray-900">About</a>
-            <a href="/index.php?id=3" class="text-gray-600 hover:text-gray-900">Blog</a>
-            <a href="/index.php?id=4" class="text-gray-600 hover:text-gray-900">Docs</a>
-            <a href="/index.php?id=5" class="text-gray-600 hover:text-gray-900">Changelog</a>
+            <f:for as="menuItem" each="{menu}">
+                <a href="{menuItem.link}" target="{menuItem.target}" title="{menuItem.title}" class="text-gray-600 hover:text-gray-900">{menuItem.title}</a>
+            </f:for>
         </nav>
         <div class="mt-12 sm:mt-16 flex justify-center gap-x-10">
             <a href="#" class="text-gray-600 hover:text-gray-800">
