@@ -28,7 +28,7 @@ The credentials for the backend admin user are `admin` and `Administrat0r!` (wit
 
 For easier development I added the DDEV Add-On "PhpMyAdmin" (with `ddev add-on get ddev/ddev-phpmyadmin`), which you can install and run with `ddev phpmyadmin` and easily inspect the contents of the `db` database.
 
-When having added content during development that affects the website, redo and commit the database export `db.sql.gz` again: `ddev export-db --file=db.sql.gz`.
+When having added content during development that affects the website, redo and commit the database export `db.sql.gz` again: `ddev export-db --file=db.sql.gz` - this file will be put under `packages/t3_tailwind` by default - don't confuse it with the one I provide on the project root level!
 
 ## How I created and installed the site package
 
